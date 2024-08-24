@@ -1,9 +1,6 @@
-// pages/api/weather.ts
-
-import type { NextApiRequest, NextApiResponse } from 'next';
 import { NextResponse } from 'next/server';
 
-export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
+export const GET = async (req: Request, res: Response) => {
     const reqUrl = req.url
     const { searchParams } = new URL(reqUrl as string)
     const localityId = searchParams.get('localityId')
