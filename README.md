@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Weather Information Application
 
-## Getting Started
+This is a weather information application built with Next.js, TypeScript, TailwindCSS, and Redux. The application provides a search interface similar to the Google.com home page, allowing users to search for localities and view detailed weather information fetched from the Weatherunion API.
 
-First, run the development server:
+## Features
+
+- **Google-style Search Interface**: A minimalist search interface that resembles the Google home page.
+- **Autocomplete Suggestions**: As users type in the search box, autocomplete suggestions appear, matching locality names.
+- **Weather Details Page**: Clicking on an autocomplete suggestion redirects users to a detailed weather information page.
+- **Responsive Design**: The application is fully responsive and works across all device sizes.
+- **State Management**: Redux is used for managing application global state.
+
+## Tech Stack
+
+- **Next.js**
+- **TypeScript**
+- **TailwindCSS**
+- **Redux**
+- **Weatherunion API**
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/psychologicalname/weather-information-app.git
+cd weather-information-app
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Set Environment Variables
+
+Create a `.env` file in the root directory of the project and add the following variables:
+
+```bash
+NEXT_PUBLIC_WEATHER_API_KEY=YOUR_API_KEY
+```
+
+Replace `YOUR_API_KEY` with your actual API key from the Weatherunion API.
+
+## Running the Application
+
+To run the application, use the following command:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This will start the application in development mode, allowing you to see the application in your browser at `http://localhost:3000`.
