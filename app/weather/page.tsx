@@ -2,7 +2,7 @@
 
 import { CircularProgress } from '@mui/material'
 import { useSearchParams } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 
 // Types
 import type { LocalityWeatherData } from '@/utils/types'
@@ -17,7 +17,7 @@ import WeatherCard from '@/components/WeatherCard'
 // Utils
 import { getTemperatureColor } from '@/utils'
 
-const WeatherPage = () => {
+const WeatherPageContent = () => {
     const searchParams = useSearchParams()
     const localityId = searchParams.get('localityId')
     const city = searchParams.get('city')
@@ -82,6 +82,14 @@ const WeatherPage = () => {
                 </div>
             )}
         </main>
+    )
+}
+
+const WeatherPage = () => {
+    return (
+        <Suspense fallback={<CircularProgress />}>
+            <WeatherPageContent />
+        </Suspense>
     )
 }
 
